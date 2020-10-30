@@ -1,0 +1,121 @@
+Viết 1 app ruby OOP
+In xuất thông tin sinh viên
+Yêu cầu
+SinhVien: ten, tuoi, diachi, ngaysinh
+Sau đó làm 1 file excel, đọc file excel đó rồi puts thông tin ra
+
+- nameClass là số ít
+-   Tên biến, tên hàm, symbol: a_var_name, get_prime, a_symbol.
+    Tên class, module: SomeClass, SomeModule
+    Hằng số: SOME_CONST
+
+Convention:
+https://kipalog.com/posts/Mot-so-Code-conventions-khi-su-dung-Ruby-on-Rails
+
+1. Khoan hãy code, liệt kê từng attribue thì datatype là gì
+Đúng r làm tiếp, các att có validate gì không
+2. Viết class Student, dùng all English
+3. Viết function validate age (age < 0 --> age = 0)
+4. Viết function in ra info SV
+“Name: {name} - Age: {age} - Address: {address} - Date of birth: {date_of_birth}”
+Sẽ in ra pattern ntn
+5. Viết 1 class method in ra array SV. Tạo class method dùng lại thằng instance method.
+
+6. Đặt tên file giống tên Class or Module. 1 file đại diện cho 1 class or module
+7. Viết  Module Student_Helper (đưa validate age vào đây)
+8. code chính ở file main.rb (include những files còn lại vào main.rb)
+9. Ruby có nhiều cái hay (built in function) để  thay thế if...else.
+10. Built in Function của Ruby khá rộng nhưng k có document nào focus được hết
+--> Phải tùy biến từng scope để seach.
+"count array with condition ruby" --> search chính xác như này thì mới focus đc scope mình cần.
+
+# 27/10/2020
+1. Create Class Student Manager
+2. Create def init have param = array
+3. Create def search Student (no using if)
+
+4. Mỗi class sẽ có 1 scope riêng của nó
+- VD:
++ Student để save info student
++ StudentManager thì để thực hiện quản lý student
++ "Bản chất em có thể viết hàm thêm trong Student và nó vẫn sẽ chaạy. Nhưng nó sẽ không đúng với mindset của OOP, anh muốn em tập viết code cho clean nữa"
++ Open mind
+
+5. Những instance của Hash sẽ chiếm 1 memory location when programing run.
+6. Những instance này có thể  truy vấn đến các biến instance trong Class.
+    VD: hash.name thay vì hash['name']
+
+7. Add 1 element in array. push() or <<
+
+- Xem lại code hnay
+- Read again OOP
+- Read document của 3 cái còn lại
+
+# 28/10/2002
+- Chuyển 2 def print_info vs statistic sang Class StudentManager để clean code hơn. (từ class method into instance method)
+- Bỏ đi param là arr truyền vào vì trong class này có rồi, k cần nữa.
++ Using đúng syntax: hash.key chứ k phải hash['key']
+
+# OOP:
+- Là mô hình lập trình sử dụng các đối tượng để thiết kế nên kiến trúc của chương trình ứng dụng
+- Trừu tượng (Abstraction) Đa hình (Polymorphism) Đóng gói (Encapsulation) Thừa kế (Inheritance)
+
+- Để created 1 instance thì dùng method "new" --> Method này sẽ return địa chỉ tham chiếu đến instance mới đc tạo.
+- method init auto đc call when created instance.
+    --> init k return value --> Mục đích: thiết lập trang thái cho instance.
+
+- Trong Ruby các biến instance chỉ có thể truy xuất trong các phương thức.
+- Phương thức rất quan trọng với tính năng "đóng gói" trong lập trình HĐT, "đóng gói" tức là chúng ta không quan tâm phương thức làm những gì mà chỉ quan tâm đến kết quả cuối cùng của phương thức mà thôi.
+- Method rất important trong tính "đóng gói" của OOP. Tức là k qtam method làm gì mà chỉ qtam kết quả của method đó mà thôi.
+
+- Language khác --> có lệnh return trả về valu của fucntion
+- Ruby --> auto return value của câu lệnh cuối
+
+- Trong Ruby, tất cả các thuộc tính đều có quyền truy cập là private và không thể thay đổi được, 
+    còn các phương thức thì mặc định có quyền truy cập là public nhưng có thể thay đổi được
+- attribute --> private --> no changed
+- method    --> public  --> maybe changed
+
+- Public, private, protected
++ Public đc truy cập cả bên trong lẫn ngoài Class
++ Private, Protected được truy cập chỉ bên trong Class, k thể truy cập bên ngoài Class
+    --> Private k using đc self, còn Protected thì có.
+
+- Thừa kế:
++ Thừa kế là tính năng cho phép định nghĩa các lớp dựa trên các lớp đã có
++ Class cha (class cơ sở) --> Class con (class dẫn xuất)
+--> Mục đích của kế thừa là giảm code thừa và tối ưu chương trình, tiết tiệm memory.
+    VD: ClassChild < ClassParent
+
++ Tính đóng gói: tức là trạng thái bảo vệ code, không cho các instance bên ngoài truy cập, thể hiện qua public, private, protected.
++ Tính kế thừa: ClassChild < ClassParent. ClassChild có các (attribute && method) public và protected của ClassParent.
++ Tính trừu tượng: 
++ Tính đa hình
+
+1. Create Class BasicStudent
+2. Create Class AdvancedStudent
+3. add mode: "..." in hash
+4. create def in StudentManager for phân loại SV.
+
+# 29/10/2020
+- DRY: Don't Repeat Yourself
+
+- Trong inherit thì super() cực kì quan trọng để kế thùa or override lại method.
+- Khi k có param ở def 
+    --> thì super hay super() đều như nhau
+- Khi có param ở def
+    --> super --> thì truyền all param lên method đó ở lớp cha
+    --> super() --> chỉ truyền lên lớp cha những param có trong ()
+
+- Viết code phải đúng theo chuẩn của OOP, đúng theo scope của nó. Vì sao ?
+    --> Vì nếu viết code k đúng theo scope thì cho dù nó vẫn chạy, chạy đúng, k ảnh hưởng đến code xung quanh. Nhưng mà code như v thì nó sẽ càng ngày càng phình to ra --> khó quản lý.
+    --> Viết code để run thì rất dể, nhưng viết code để dể quản lý thì rất khó.
+
+- Ruby là ngôn ngữ like human read
+        
+# 30/10/2020
+# Ruby Style Code
+- Not using @@class_variable --> because các @@class_variable của các Class kế thừa nhau sẽ override nhau. Ưu tiên Class Instance.
+- code suggestion
+- Install: zsh on Terminal, tabnine on Extension.
+- Start code Ruby with Git. Checkout branch new when code issue.

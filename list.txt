@@ -1,0 +1,26 @@
+# Week 1 (14-20/10):
+Mục tiêu nắm và hiểu được: 
+- Ruby Syntax
+- Loops, Operators
+- Array, Hash, Iterators
+- Methods, Blocks
+- Classes, Objects, Modules
+Tài liệu tham khảo
+https://www.tutorialspoint.com/ruby
+
+# Week 2 (21-28/10):
+Mục tiêu: 
+- Ruby object-oriented
+- File I/O, Exceptions
+- Regular Expressions
+- Database Access
+- Web Services
+- Built-in Functions
+- Predefined Variables, Predefined Constants
+- Associated Tools
+Tài liệu tham khảo:
+- https://www.tutorialspoint.com/ruby
+
+# Week 3 (29-.../10):
+- Rspec
+- ...
