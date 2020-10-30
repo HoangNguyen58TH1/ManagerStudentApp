@@ -53,10 +53,11 @@ class StudentManager
     basic, advanced = 0, 0
     arr_basic, arr_advanced = [], []
     students.each do |hash|
-      if hash.class == StudentBasic && hash.score < 5
+      next if hash.score >= 5
+      if hash.class == StudentBasic
         basic += 1
         arr_basic << hash
-      elsif hash.class == StudentAdvanced && hash.score < 5
+      else
         advanced += 1
         arr_advanced << hash
       end
