@@ -119,3 +119,5 @@ Sẽ in ra pattern ntn
 - code suggestion
 - Install: zsh on Terminal, tabnine on Extension.
 - Start code Ruby with Git. Checkout branch new when code issue.
+- IDE # Code Editer.
+- 

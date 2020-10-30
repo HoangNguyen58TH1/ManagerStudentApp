@@ -29,7 +29,7 @@ class StudentManager
     puts "There are #{num} students are over than 20 years old."
   end
 
-  def classify
+  def classify_student_mode
     basic, advanced = 0, 0
     arr_basic, arr_advanced = [], []
     students.each do |hash|
@@ -46,6 +46,25 @@ class StudentManager
     print_info_helper(arr_basic)
     puts '-------------------------'
     puts "Have #{advanced} Student Advanced"
+    print_info_helper(arr_advanced)
+  end
+
+  def classify_student_score
+    basic, advanced = 0, 0
+    arr_basic, arr_advanced = [], []
+    students.each do |hash|
+      if hash.class == StudentBasic && hash.score < 5
+        basic += 1
+        arr_basic << hash
+      elsif hash.class == StudentAdvanced && hash.score < 5
+        advanced += 1
+        arr_advanced << hash
+      end
+    end
+    puts "Have #{basic} Student Basic with Score < 5"
+    print_info_helper(arr_basic)
+    puts '-------------------------'
+    puts "Have #{advanced} Student Advanced with Score < 5"
     print_info_helper(arr_advanced)
   end
 end
