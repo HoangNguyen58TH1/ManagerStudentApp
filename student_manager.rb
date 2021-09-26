@@ -22,6 +22,8 @@ class StudentManager
 
   def print_info
     print_info_helper(students)
+    puts "abcs #{students}"
+    puts "abcs #{@students}"
   end
 
   def statistic
