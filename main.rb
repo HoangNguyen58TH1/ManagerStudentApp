@@ -29,3 +29,6 @@ end
 student_manager = StudentManager.new(students)
 student_manager.print_info()
 student_manager.classify
+
+# 
+aaa
